@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Reveal from './Reveal';
 
 const projects = [
-  { title: 'Handmade Haven', tag: 'Startup team demo', subtitle: 'E-commerce website concept', image: '/handmade-haven.jpg', alt: 'Handmade Haven responsive online shop shown on a laptop, phone, and tablet', slug: 'handmade-haven' },
-  { title: 'Architecture Studio', tag: 'Architecture team project', subtitle: 'Interior & architecture website', image: '/architecture-studio.jpg', alt: 'Architecture Studio website shown on a laptop in a warm interior', slug: 'architecture-studio' },
+  { title: 'Handmade Haven', tag: 'Startup team demo', subtitle: 'E-commerce website concept', image: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/handmade-haven.jpg`, alt: 'Handmade Haven responsive online shop shown on a laptop, phone, and tablet', slug: 'handmade-haven' },
+  { title: 'Architecture Studio', tag: 'Architecture team project', subtitle: 'Interior & architecture website', image: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/architecture-studio.jpg`, alt: 'Architecture Studio website shown on a laptop in a warm interior', slug: 'architecture-studio' },
   { title: 'Cherry Celebrations', tag: 'Client project', subtitle: 'Wedding & event planner website', image: '/digital-invitation.jpg', alt: 'Cherry Celebrations website shown across multiple devices', slug: 'digital-invitation' },
 ];
 

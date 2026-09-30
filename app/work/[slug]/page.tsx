@@ -10,8 +10,8 @@ const projects = {
     description: 'A responsive e-commerce demo bringing handmade product discovery, maker stories, and warm editorial imagery together.',
     note: 'Demo and project work created for a startup team.',
     images: [
-      { src: '/handmade-haven.jpg', alt: 'Handmade Haven shop concept shown on a laptop, phone, and tablet', caption: 'Responsive shop mockup' },
-      { src: '/assets/handmade-haven-project-board.jpg', alt: 'Handmade Haven visual direction and page concepts', caption: 'Visual direction and page concepts' },
+      { src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/handmade-haven.jpg`, alt: 'Handmade Haven shop concept shown on a laptop, phone, and tablet', caption: 'Responsive shop mockup' },
+      { src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/handmade-haven-project-board.jpg`, alt: 'Handmade Haven visual direction and page concepts', caption: 'Visual direction and page concepts' },
     ],
   },
   'architecture-studio': {
@@ -20,9 +20,9 @@ const projects = {
     description: 'An editorial architecture website concept with project storytelling, studio services, and responsive layouts for an architecture team.',
     note: 'Website project and mockups created for an architecture team.',
     images: [
-      { src: '/architecture-studio.jpg', alt: 'Architecture Studio website displayed on a laptop in a warm interior', caption: 'Laptop website mockup' },
-      { src: '/assets/photo_2026-09-30_00-17-00.jpg', alt: 'Architecture Studio homepage, service, featured project, and process layouts', caption: 'Homepage and service direction' },
-      { src: '/assets/photo_2026-09-30_00-16-59.jpg', alt: 'Architecture Studio project pages, responsive layouts, and design system', caption: 'Projects and responsive system' },
+      { src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/architecture-studio.jpg`, alt: 'Architecture Studio website displayed on a laptop in a warm interior', caption: 'Laptop website mockup' },
+      { src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/photo_2026-09-30_00-17-00.jpg`, alt: 'Architecture Studio homepage, service, featured project, and process layouts', caption: 'Homepage and service direction' },
+      { src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/photo_2026-09-30_00-16-59.jpg`, alt: 'Architecture Studio project pages, responsive layouts, and design system', caption: 'Projects and responsive system' },
     ],
   },
   'digital-invitation': {
@@ -31,9 +31,9 @@ const projects = {
     description: 'A warm, responsive website concept for a wedding and event team, paired with a refined visual direction and mockups for desktop and mobile.',
     note: 'Website mockups and visual direction for Cherry Celebrations.',
     images: [
-      { src: '/assets/cherry-showcase-mockup.jpg', alt: 'Cherry Celebrations event website displayed across laptop, tablet, and phone mockups', caption: 'Responsive website mockup' },
-      { src: '/assets/cherry-brand-direction.jpg', alt: 'Cherry Celebrations typography, color palette, brand elements, and interface direction', caption: 'Brand and interface direction' },
-      { src: '/assets/cherry-page-plan.jpg', alt: 'Cherry Celebrations hero, gallery, process, work, and responsive page plan', caption: 'Page structure and responsive layouts' },
+      { src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/cherry-showcase-mockup.jpg`, alt: 'Cherry Celebrations event website displayed across laptop, tablet, and phone mockups', caption: 'Responsive website mockup' },
+      { src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/cherry-brand-direction.jpg`, alt: 'Cherry Celebrations typography, color palette, brand elements, and interface direction', caption: 'Brand and interface direction' },
+      { src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/cherry-page-plan.jpg`, alt: 'Cherry Celebrations hero, gallery, process, work, and responsive page plan', caption: 'Page structure and responsive layouts' },
     ],
   },
 } as const;
@@ -65,10 +65,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     <main className="detail-page">
       <header className="nav detail-header">
         <Link className="wordmark" href="/" aria-label="We Make Design home">
-          <Image src="/wm-logo.png" alt="We Make Designs WM logo" width={126} height={76} priority />
+          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/wm-logo.png`} alt="We Make Designs WM logo" width={126} height={76} priority />
         </Link>
         <nav aria-label="Project navigation">
-          <Link href="/#work">Selected work</Link>
+          <Link href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/#work`}>Selected work</Link>
           <Link className="nav-cta" href="https://www.instagram.com/we_make_designs__/" target="_blank" rel="noreferrer">Start a project ↗</Link>
         </nav>
       </header>
@@ -91,7 +91,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       </section>
       <section className="detail-bottom container">
         <div><p className="eyebrow">About this work</p><p>{project.note}</p></div>
-        <Link href="/#work">← Back to selected work</Link>
+        <Link href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/#work`}>← Back to selected work</Link>
         <Link href="https://www.instagram.com/we_make_designs__/" target="_blank" rel="noreferrer">Discuss a project on Instagram ↗</Link>
       </section>
     </main>

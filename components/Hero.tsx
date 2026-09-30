@@ -18,8 +18,8 @@ export default function Hero() {
         aria-hidden="true"
       >
         <picture>
-          <source srcSet="/hero.webp" type="image/webp" />
-          <Image className="hero-photo" src="/hero.jpg" alt="" fill priority sizes="100vw" />
+          <source srcSet={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/hero.webp`} type="image/webp" />
+          <Image className="hero-photo" src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/hero.jpg`} alt="" fill priority sizes="100vw" />
         </picture>
       </motion.div>
       <div className="hero-shade" />
