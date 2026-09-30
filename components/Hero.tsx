@@ -17,7 +17,10 @@ export default function Hero() {
         transition={reduceMotion ? { duration: 0 } : { duration: 1.8, ease: [0.2, 0.65, 0.3, 1] }}
         aria-hidden="true"
       >
-        <Image className="hero-photo" src="/hero.jpg" alt="" fill priority sizes="100vw" />
+        <picture>
+          <source srcSet="/hero.webp" type="image/webp" />
+          <Image className="hero-photo" src="/hero.jpg" alt="" fill priority sizes="100vw" />
+        </picture>
       </motion.div>
       <div className="hero-shade" />
       <motion.div
